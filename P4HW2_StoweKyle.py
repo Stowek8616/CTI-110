@@ -3,18 +3,6 @@
 # P4HW2
 # Calculate an employee's pay and overtime pay and display these stats for every employee entered
 
-pay = float
-otPay = float
-othours = int
-totalpay = float
-employeelist =[]
-rateList = []
-othoursList = []
-otpayList = []
-payList = []
-totalPayList = []
-
-
 employeeName = str(input("Enter an employee's name or Done to termintate: "))
 while employeeName.lower() != "done":
     hours = int(input("How many hours did "+ employeeName +" work? "))
@@ -30,13 +18,7 @@ while employeeName.lower() != "done":
         otpay = othours * (rate * 2)
     
     totalpay = pay + otpay
-    employeelist.append(employeeName)
-    rateList.append(rate)
-    othoursList.append(othours)
-    otpayList.append(otpay)
-    payList.append(pay)
-    totalPayList.append(totalpay)
+print(f'{"Hours Worked":<15}{"Pay Rate:":<15}{"OverTime":<15}{"OverTime Pay":<15}
 
     employeeName = (input("Enter another employee's name or Done to view results: "))
 
-print(employeelist[0])
