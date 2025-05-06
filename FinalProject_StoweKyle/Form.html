@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample Form</title>
+    <style>
+        body {
+            background-color: #e0f7fa; /* Light blue background */
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        form {
+            background-color: white; /* White background for the form */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+		
+        button {
+            width: 48%;
+            margin-right: 4%;
+            background-color: #00796b;
+            color: white;
+            border: none;
+        }
+
+        button[type="reset"] {
+            background-color: #d32f2f; /* Red for reset */
+        }
+
+        button:hover {
+            cursor: pointer;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <h2 style ="text-align: center">How often do you exercise?</h2>
+	 <nav style ="text-align: center">
+  <a href="index.html">Home</a> &nbsp;&nbsp;
+  <a href="Table.html">Table</a> &nbsp;&nbsp;
+  <a href="Form.html">Form</a> &nbsp;&nbsp;
+  <a href="https://www.google.com/">Google</a>
+</nav> <br>
+    <form action="#" method="POST">
+        <!-- First Name -->
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" name="first-name" required>
+        <br><br>
+
+        <!-- Last Name -->
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" name="last-name" required>
+        <br><br>
+
+        <!-- Dropdown Menu -->
+        <label for="selection">How oftern do you take a walk?</label> <br>
+        <select id="selection" name="selection">
+            <option value="option1">0-1 times a week</option>
+            <option value="option2">2-3 times a week</option>
+            <option value="option3">4-5 times a week</option>
+			<option value="option3">6+ times a week</option>
+        </select>
+        <br><br>
+
+        <!-- Radio Buttons -->
+        <label>How often do you work out?</label> <br>
+        <input type="radio" id="0" name="workout" value="0">
+        <label for="0">Never</label> <br>
+        <input type="radio" id="1-2" name="workout" value="1-2">
+        <label for="1-2">Once or twice a week</label> <br>
+		<input type="radio" id="other" name="workout" value="other">
+        <label for="other">Every other day</label> <br>
+        <input type="radio" id="daily" name="workout" value="daily">
+        <label for="daily">Daily</label>
+        <br><br>
+
+        <!-- Comment Box -->
+        <label for="comments">Your Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here..."></textarea>
+        <br><br>
+
+        <!-- Submit and Reset Buttons -->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
