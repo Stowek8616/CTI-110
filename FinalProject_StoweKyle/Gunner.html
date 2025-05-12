@@ -3,22 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overclock Checklist - Deep Rock Galactic</title>
+    <title>Engineer Overclocks - Deep Rock Galactic</title>
     <style>
+        :root {
+            --accentColor: #000000;
+            --backgroundColor: #ffffff;
+            --drg-gray: #fffbfb;
+            --drg-light: #F5F5F5;
+            --engineer-color: #cc0000;
+            --scout-color: #0036cc;
+            --driller-color: #ffd900;
+            --gunner-color: #008b00;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            background-color: var(--backgroundColor);
+            color: var(--drg-light);
             line-height: 1.5;
+        }
+        
+        .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
         }
         
         header {
-            margin-bottom: 20px;
-			text-align: center;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--gunner-color);
+            padding-bottom: 15px;
         }
-		
+        
+        h1 {
+            color: var(--gunner-color);
+            margin-bottom: 0;
+        }
+        
+        .subtitle {
+            color: var(--accentColor);
+            margin-top: 5px;
+        }
+        
         nav {
             margin-bottom: 30px;
         }
@@ -28,68 +57,420 @@
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 25px;
             justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
         nav a {
-            color: #0066cc;
             text-decoration: none;
+            padding: 8px 15px;
+            color: white;
+            border-radius: 4px;
         }
+        
         nav li:nth-child(1) a {
-            color: #000000; // Black
+            background-color: var(--accentColor);
+            color: var(--backgroundColor);
         }
         
         nav li:nth-child(2) a {
-            color: #cc0000; // Red
+            background-color: var(--engineer-color);
         }
         
         nav li:nth-child(3) a {
-            color: #008800; // Green
+            background-color: var(--gunner-color);
+            border: 2px solid var(--accentColor);
         }
         
         nav li:nth-child(4) a {
-            color: #884400; // Yellow
-        }
-		
-		nav li:nth-child(5) a {
-            color: #00008B; // Blue
-        }
-        nav a:hover {
-            text-decoration: underline;
+            background-color: var(--driller-color);
         }
         
-        main {
-            margin-bottom: 30px;
+        nav li:nth-child(5) a {
+            background-color:var(--scout-color);
+        }
+        
+        h2 {
+            color: var(--accentColor);
+            margin-top: 30px;
+            border-bottom: 1px solid var(--accentColor);
+            padding-bottom: 10px;
+        }
+        
+        .checklist {
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .checklist li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .overclock-name {
+            font-weight: bold;
+        }
+        
+        .overclock-type {
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            color: white;
+        }
+        
+        .clean {
+            background-color: #00aa00;
+        }
+        
+        .balanced {
+            background-color: #ff9900;
+        }
+        
+        .unstable {
+            background-color: #cc0000;
         }
         
         footer {
-            border-top: 1px solid #ddd;
-            padding-top: 10px;
-            font-size: 14px;
-            color: #666;
+            margin-top: 40px;
+            border-top: 2px solid var(--gunner-color);
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accentColor);
+            margin: 0 10px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                display: block;
+                width: 200px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Home and Information</h1>
-    </header>
-    
-    <nav>
-        <ul>
-		    <li><a href="Home.html">Home</a></li>
-            <li><a href="Engineer.html">Engineer</a></li>
-            <li><a href="Gunner.html">Gunner</a></li>
-            <li><a href="Driller.html">Driller</a></li>
-            <li><a href="Scout.html">Scout</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>Overclock Checklist</h1>
+            <h1>Gunner</h1>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Engineer.html">Engineer</a></li>
+                <li><a href="Gunner.html">Gunner</a></li>
+                <li><a href="Driller.html">Driller</a></li>
+                <li><a href="Scout.html">Scout</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <!-- "Lead Storm" Powered Minigun -->
+            <h2>"Lead Storm" Powered Minigun</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="minigun-1">
+                    <span class="overclock-name">A Little More Oomph!</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="minigun-2">
+                    <span class="overclock-name">Thinned Drum Walls</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="minigun-3">
+                    <span class="overclock-name">Burning Hell</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="minigun-4">
+                    <span class="overclock-name">Compact Feed Mechanism</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="minigun-5">
+                    <span class="overclock-name">Exhaust Vectoring</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="minigun-6">
+                    <span class="overclock-name">Rotary Overdrive</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="minigun-7">
+                    <span class="overclock-name">Bullet Hell</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="minigun-8">
+                    <span class="overclock-name">Lead Storm</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- "Thunderhead" Heavy Autocannon -->
+            <h2>"Thunderhead" Heavy Autocannon</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="autocannon-1">
+                    <span class="overclock-name">Composite Drums</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="autocannon-2">
+                    <span class="overclock-name">Splintering Shells</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="autocannon-3">
+                    <span class="overclock-name">Carpet Bomber</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="autocannon-4">
+                    <span class="overclock-name">Combat Mobility</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="autocannon-5">
+                    <span class="overclock-name">Big Bertha</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="autocannon-6">
+                    <span class="overclock-name">Neurotoxin Payload</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="autocannon-7">
+                    <span class="overclock-name">Mortar Rounds</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- "Hurricane" Guided Rocket System" -->
+            <h2>"Hurricane" Guided Rocket System"</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="hurricane-1">
+                    <span class="overclock-name">Overtuned Feed Mechanism</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="hurricane-2">
+                    <span class="overclock-name">Fragmentation Missiles</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="hurricane-3">
+                    <span class="overclock-name">Plasma Burster Missiles</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="hurricane-4">
+                    <span class="overclock-name">Minelayer System</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="hurricane-5">
+                    <span class="overclock-name">Rocket Barrage</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="hurricane-6">
+                    <span class="overclock-name">Jet Fuel Homebrew</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="hurricane-7">
+                    <span class="overclock-name">Salvo Module</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="hurricane-8">
+                    <span class="overclock-name">Cluster Charges</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- BRT7 Burst Fire Gun -->
+            <h2>BRT7 Burst Fire Gun</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="burst-1">
+                    <span class="overclock-name">Composite Casings</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="burst-2">
+                    <span class="overclock-name">Full Chamber Seal</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="burst-3">
+                    <span class="overclock-name">Compact Mags</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="burst-4">
+                    <span class="overclock-name">Experimental Rounds</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>               
+                <li>
+                    <input type="checkbox" id="burst-5">
+                    <span class="overclock-name">Electro Minelets</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="burst-6">
+                    <span class="overclock-name">Micro Flechettes</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="burst-7">
+                    <span class="overclock-name">Lead Spray</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- "Bulldog" Heavy Revolver -->
+            <h2>"Bulldog" Heavy Revolver</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="Revolver-1">
+                    <span class="overclock-name">Chain Hit</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Revolver-2">
+                    <span class="overclock-name">Homebrew Powder</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Revolver-3">
+                    <span class="overclock-name">Volatile Bullets</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Revolver-4">
+                    <span class="overclock-name">Six Shooter</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Revolver-5">
+                    <span class="overclock-name">Elephant Rounds</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Revolver-6">
+                    <span class="overclock-name">Magic Bullets</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+        </main>
 
-    <footer>
-		<h2>Contact Me</h2>
-        <p><a href="mailto:someone@example.com">Email</a> </p>
-		<p><a href="https://github.com/Stowek8616/CTI-110">Github</a> </p>
-    </footer>
+            <!-- ArmsKore Coil Gun -->
+            <h2>ArmsKore Coil Gun</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="Coil-1">
+                    <span class="overclock-name">Re-Atomizer</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Coil-2">
+                    <span class="overclock-name">Ultra-Magnetic Coils</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Coil-3">
+                    <span class="overclock-name">Backfeeding Module</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Coil-4">
+                    <span class="overclock-name">The Mole</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Coil-5">
+                    <span class="overclock-name">Hellfire</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="Coil-6">
+                    <span class="overclock-name">Triple Tech Chambers</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <p>
+                <a href="mailto:someone@example.com">Email</a> 
+                <a href="https://github.com/Stowek8616/stowek8616.github.io">Github</a>
+            </p>
+            <p>Rock and Stone!</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            loadCheckboxStates();
+
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    saveCheckboxStates();
+                });
+            });
+            
+            // Function to save checkbox states
+            function saveCheckboxStates() {
+                const checkboxStates = {};
+                
+                checkboxes.forEach(function(checkbox) {
+                    checkboxStates[checkbox.id] = checkbox.checked;
+                });
+
+                localStorage.setItem('scoutOverclockStates', JSON.stringify(checkboxStates));
+            }
+            // Function to load checkbox states
+            function loadCheckboxStates() {
+                const savedStates = localStorage.getItem('scoutOverclockStates');
+                if (savedStates) {
+                    const checkboxStates = JSON.parse(savedStates);
+                    
+                    checkboxes.forEach(function(checkbox) {
+                        if (checkboxStates.hasOwnProperty(checkbox.id)) {
+                            checkbox.checked = checkboxStates[checkbox.id];
+                        }
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>

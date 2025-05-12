@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineer Overclocks - Deep Rock Galactic</title>
+    <style>
+        :root {
+            --accentColor: #000000;
+            --backgroundColor: #ffffff;
+            --drg-gray: #fffbfb;
+            --drg-light: #F5F5F5;
+            --engineer-color: #cc0000;
+            --scout-color: #0036cc;
+            --driller-color: #ffd900;
+            --gunner-color: #008b00;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--backgroundColor);
+            color: var(--drg-light);
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--accentColor);
+            padding-bottom: 15px;
+        }
+        
+        h1 {
+            color: var(--accentColor);
+            margin-bottom: 0;
+        }
+        
+        .subtitle {
+            color: var(--accentColor);
+            margin-top: 5px;
+        }
+        
+        nav {
+            margin-bottom: 30px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            text-decoration: none;
+            padding: 8px 15px;
+            color: white;
+            border-radius: 4px;
+        }
+        
+        nav li:nth-child(1) a {
+            background-color: var(--accentColor);
+            color: var(--backgroundColor);
+            border: 2px solid var(--accentColor);
+        }
+        
+        nav li:nth-child(2) a {
+            background-color: var(--engineer-color);
+        }
+        
+        nav li:nth-child(3) a {
+            background-color: var(--gunner-color);
+        }
+        
+        nav li:nth-child(4) a {
+            background-color: var(--driller-color);
+        }
+        
+        nav li:nth-child(5) a {
+            background-color:var(--scout-color);
+        }
+        
+        h2 {
+            color: var(--accentColor);
+            margin-top: 30px;
+            border-bottom: 1px solid var(--accentColor);
+            padding-bottom: 10px;
+        }
+
+        p {
+            color: var(--accentColor);
+        }
+        
+        .checklist {
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .checklist li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .overclock-name {
+            font-weight: bold;
+        }
+        
+        .overclock-type {
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            color: white;
+        }
+        
+        .clean {
+            background-color: #00aa00;
+        }
+        
+        .balanced {
+            background-color: #ff9900;
+        }
+        
+        .unstable {
+            background-color: #cc0000;
+        }
+        
+        footer {
+            margin-top: 40px;
+            border-top: 2px solid var(--accentColor);
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accentColor);
+            margin: 0 10px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                display: block;
+                width: 200px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Overclock Checklist</h1>
+            <h1>Home</h1>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Engineer.html">Engineer</a></li>
+                <li><a href="Gunner.html">Gunner</a></li>
+                <li><a href="Driller.html">Driller</a></li>
+                <li><a href="Scout.html">Scout</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <h2>What does this website do?</h2>
+            <p>This website helps you track your progress with weapon overclocks in Deep Rock Galactic. Use the colored class links above to navigate to each class's page, where you can check off which overclocks you've acquired and monitor your collection progress.</p>
+            <p>Each page is sorted by the weapons available to each class and then sorted by three Overclock types. Clean, Balanced, and Unstable, which indicated how much it changes the weapon. At the bottom of each page is a link to my email and the Github Repo that hosts this site.</p>
+               
+        </main>
+
+        <footer>
+            <p>
+                <a href="mailto:stowek8616@student.faytechcc.edu">Email</a> 
+                <a href="https://github.com/Stowek8616/stowek8616.github.io">Github</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

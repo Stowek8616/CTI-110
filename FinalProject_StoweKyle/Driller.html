@@ -3,22 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Overclock Checklist - Deep Rock Galactic</title>
+    <title>Engineer Overclocks - Deep Rock Galactic</title>
     <style>
+        :root {
+            --accentColor: #000000;
+            --backgroundColor: #ffffff;
+            --drg-gray: #fffbfb;
+            --drg-light: #F5F5F5;
+            --engineer-color: #cc0000;
+            --scout-color: #0036cc;
+            --driller-color: #ffd900;
+            --gunner-color: #008b00;
+        }
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
+            background-color: var(--backgroundColor);
+            color: var(--drg-light);
             line-height: 1.5;
+        }
+        
+        .container {
             max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
         }
         
         header {
-            margin-bottom: 20px;
-			text-align: center;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--driller-color);
+            padding-bottom: 15px;
         }
-		
+        
+        h1 {
+            color: var(--driller-color);
+            margin-bottom: 0;
+        }
+        
+        .subtitle {
+            color: var(--accentColor);
+            margin-top: 5px;
+        }
+        
         nav {
             margin-bottom: 30px;
         }
@@ -28,68 +57,405 @@
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 25px;
             justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
         
         nav a {
-            color: #0066cc;
             text-decoration: none;
+            padding: 8px 15px;
+            color: white;
+            border-radius: 4px;
         }
+        
         nav li:nth-child(1) a {
-            color: #000000; // Black
+            background-color: var(--accentColor);
+            color: var(--backgroundColor);
         }
         
         nav li:nth-child(2) a {
-            color: #cc0000; // Red
+            background-color: var(--engineer-color);
         }
         
         nav li:nth-child(3) a {
-            color: #008800; // Green
+            background-color: var(--gunner-color);
         }
         
         nav li:nth-child(4) a {
-            color: #884400; // Yellow
-        }
-		
-		nav li:nth-child(5) a {
-            color: #00008B; // Blue
-        }
-        nav a:hover {
-            text-decoration: underline;
+            background-color: var(--driller-color);
+            border: 2px solid var(--accentColor);
         }
         
-        main {
-            margin-bottom: 30px;
+        nav li:nth-child(5) a {
+            background-color:var(--scout-color);
+        }
+        
+        h2 {
+            color: var(--accentColor);
+            margin-top: 30px;
+            border-bottom: 1px solid var(--accentColor);
+            padding-bottom: 10px;
+        }
+        
+        .checklist {
+            padding: 0;
+            list-style-type: none;
+        }
+        
+        .checklist li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+        }
+        
+        .overclock-name {
+            font-weight: bold;
+        }
+        
+        .overclock-type {
+            margin-left: 10px;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+            color: white;
+        }
+        
+        .clean {
+            background-color: #00aa00;
+        }
+        
+        .balanced {
+            background-color: #ff9900;
+        }
+        
+        .unstable {
+            background-color: #cc0000;
         }
         
         footer {
-            border-top: 1px solid #ddd;
-            padding-top: 10px;
-            font-size: 14px;
-            color: #666;
+            margin-top: 40px;
+            border-top: 2px solid var(--driller-color);
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        footer a {
+            color: var(--accentColor);
+            margin: 0 10px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                display: block;
+                width: 200px;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Home and Information</h1>
-    </header>
-    
-    <nav>
-        <ul>
-		    <li><a href="Home.html">Home</a></li>
-            <li><a href="Engineer.html">Engineer</a></li>
-            <li><a href="Gunner.html">Gunner</a></li>
-            <li><a href="Driller.html">Driller</a></li>
-            <li><a href="Scout.html">Scout</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <header>
+            <h1>Overclock Checklist</h1>
+            <h1>Driller</h1>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Engineer.html">Engineer</a></li>
+                <li><a href="Gunner.html">Gunner</a></li>
+                <li><a href="Driller.html">Driller</a></li>
+                <li><a href="Scout.html">Scout</a></li>
+            </ul>
+        </nav>
+        
+        <main>
+            <!-- CRSPR Flamethrower -->
+            <h2>CRSPR Flamethrower</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="flamethrower-1">
+                    <span class="overclock-name">Lighter Tanks</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="flamethrower-2">
+                    <span class="overclock-name">Sticky Additive</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="flamethrower-3">
+                    <span class="overclock-name">Compact Feed Valves</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="flamethrower-4">
+                    <span class="overclock-name">Fuel Stream Diffuser</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="flamethrower-5">
+                    <span class="overclock-name">Face Melter</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="flamethrower-6">
+                    <span class="overclock-name">Sticky Fuel</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="flamethrower-7">
+                    <span class="overclock-name">Scorching Tides</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- Cryo Cannon -->
+            <h2>Cryo Cannon</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="cryo-1">
+                    <span class="overclock-name">Improved Thermal Efficiency</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cryo-2">
+                    <span class="overclock-name">Tuned Cooler</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cryo-3">
+                    <span class="overclock-name">Flow Rate Expansion</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cryo-4">
+                    <span class="overclock-name">Ice Spear</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cryo-5">
+                    <span class="overclock-name">Crystal Nucleation</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cryo-6">
+                    <span class="overclock-name">Ice Storm</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cryo-7">
+                    <span class="overclock-name">Snowball</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- Corrosive Sludge Pump -->
+            <h2>Corrosive Sludge Pump</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="sludge-1">
+                    <span class="overclock-name">Hydrogen Ion Additive</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="sludge-2">
+                    <span class="overclock-name">AG Mixture</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="sludge-3">
+                    <span class="overclock-name">Volatile Impact Mixture</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="sludge-4">
+                    <span class="overclock-name">Disperser Compound</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="sludge-5">
+                    <span class="overclock-name">Combustive Goo Mix</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="sludge-6">
+                    <span class="overclock-name">Goo Bomber Special</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="sludge-7">
+                    <span class="overclock-name">Sludge Blast</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- Subata 120 -->
+            <h2>Subata 120</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="subata-1">
+                    <span class="overclock-name">Chain Hit</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="subata-2">
+                    <span class="overclock-name">Homebrew Powder</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="subata-3">
+                    <span class="overclock-name">Oversized Magazine</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="subata-4">
+                    <span class="overclock-name">Automatic Fire</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>               
+                <li>
+                    <input type="checkbox" id="subata-5">
+                    <span class="overclock-name">Explosive Reload</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="subata-6">
+                    <span class="overclock-name">Tranquilizer Rounds</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+            
+            <!-- Experimental Plasma Charger -->
+            <h2>Experimental Plasma Charger</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="plasma-1">
+                    <span class="overclock-name">Energy Rerouting</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="plasma-2">
+                    <span class="overclock-name">Magnetic Cooling Unit</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="plasma-3">
+                    <span class="overclock-name">Heat Pipe</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="plasma-4">
+                    <span class="overclock-name">Heavy Hitter</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="plasma-5">
+                    <span class="overclock-name">Overcharger</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="plasma-6">
+                    <span class="overclock-name">Persistent Plasma</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+        </main>
 
-    <footer>
-		<h2>Contact Me</h2>
-        <p><a href="mailto:someone@example.com">Email</a> </p>
-		<p><a href="https://github.com/Stowek8616/CTI-110">Github</a> </p>
-    </footer>
+            <!-- Colette Wave Cooker -->
+            <h2>Colette Wave Cooker</h2>
+            <ul class="checklist">
+                <li>
+                    <input type="checkbox" id="cooker-1">
+                    <span class="overclock-name">Liquid Cooling System</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cooker-2">
+                    <span class="overclock-name">Super Focus Lens</span>
+                    <span class="overclock-type clean">Clean</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cooker-3">
+                    <span class="overclock-name">Diffusion Ray</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cooker-4">
+                    <span class="overclock-name">Mega Power Supply</span>
+                    <span class="overclock-type balanced">Balanced</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cooker-5">
+                    <span class="overclock-name">Blistering Necrosis</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+                <li>
+                    <input type="checkbox" id="cooker-6">
+                    <span class="overclock-name">Gamma Contamination</span>
+                    <span class="overclock-type unstable">Unstable</span>
+                </li>
+            </ul>
+        </main>
+
+        <footer>
+            <p>
+                <a href="mailto:someone@example.com">Email</a> 
+                <a href="https://github.com/Stowek8616/stowek8616.github.io">Github</a>
+            </p>
+            <p>Rock and Stone!</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            loadCheckboxStates();
+
+            checkboxes.forEach(function(checkbox) {
+                checkbox.addEventListener('change', function() {
+                    saveCheckboxStates();
+                });
+            });
+            
+            // Function to save checkbox states
+            function saveCheckboxStates() {
+                const checkboxStates = {};
+                
+                checkboxes.forEach(function(checkbox) {
+                    checkboxStates[checkbox.id] = checkbox.checked;
+                });
+
+                localStorage.setItem('scoutOverclockStates', JSON.stringify(checkboxStates));
+            }
+            // Function to load checkbox states
+            function loadCheckboxStates() {
+                const savedStates = localStorage.getItem('scoutOverclockStates');
+                if (savedStates) {
+                    const checkboxStates = JSON.parse(savedStates);
+                    
+                    checkboxes.forEach(function(checkbox) {
+                        if (checkboxStates.hasOwnProperty(checkbox.id)) {
+                            checkbox.checked = checkboxStates[checkbox.id];
+                        }
+                    });
+                }
+            }
+        });
+    </script>
 </body>
 </html>
